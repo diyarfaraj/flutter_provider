@@ -8,19 +8,21 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = Provider.of<UserProvider>(context);
     final users = data.user;
-    return Center(
-      child: Container(
-        child: ListView.builder(
-          itemCount: users.length,
-          itemBuilder: (context, index) {
-            return Center(
-              child: Column(
-                children: [
-                  Text(users[index].firstName),
-                ],
-              ),
-            );
-          },
+    return Scaffold(
+      body: Center(
+        child: Container(
+          child: ListView.builder(
+            itemCount: users.length,
+            itemBuilder: (context, index) {
+              return Center(
+                child: Column(
+                  children: [
+                    Text(users[index].firstName),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
