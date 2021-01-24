@@ -23,7 +23,7 @@ class User {
   }
 }
 
-Future<List<User>> getUsers(context) async {
+Future<List<User>> getUsers() async {
   List<User> users = [];
   try {
     final response = await http.get(
