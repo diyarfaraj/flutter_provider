@@ -8,6 +8,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final data = Provider.of<UserProvider>(context);
     final users = data.user;
+    final randUser = User(
+      firstName: 'diyar',
+      lastName: 'faraj',
+      email: 'diyar.faraj@gmail.com',
+    );
     return Scaffold(
       body: Center(
         child: Container(
@@ -17,7 +22,15 @@ class MyHomePage extends StatelessWidget {
               return Center(
                 child: Column(
                   children: [
-                    Text(users[index].firstName),
+                    Text(
+                      users[index].firstName,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                    IconButton(
+                        icon: Icon(Icons.add),
+                        onPressed: () {
+                          data.addUser(randUser);
+                        })
                   ],
                 ),
               );
